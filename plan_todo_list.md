@@ -50,6 +50,7 @@ class create_to_do():
         pass # No code here yet
 
 
+
 ```
 
 ## 3. Create Examples as Tests
@@ -84,6 +85,32 @@ mitch.add_task("Walk the dog")
 mitch.add_task("Wash the dishes")
 mitch.complete_tasks("Walk the dog")
 mitch.show_task() => ["Wash the dishes"]
+
+"""
+Adding a task that is already added and completed, updates the task to be "Not started" again.
+"""
+mitch = Create_To_Do
+mitch.add_task("Walk the dog")
+mitch.add_task("Wash the dishes")
+mitch.complete_tasks("Walk the dog")
+mitch.add_task("Walk the dog")
+mitch.show_task() => ["Walk the dog", "Wash the dishes"]
+
+"""
+Calling show_tasks when empty
+Returns an empty list
+"""
+mitch = Create_To_Do
+mitch.show_tasks() => []
+
+"""
+Completing a task that hasn't been added
+Adds it to the list and prints a message to the user
+"""
+mitch = Create_To_Do
+mitch.complete_tasks("Walk the dog") => "Walk the dog was not an existing task. It has been added as a completed task"
+mitch.show_tasks() => []
+
 
 ```
 
